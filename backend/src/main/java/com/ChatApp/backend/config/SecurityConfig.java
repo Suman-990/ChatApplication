@@ -1,4 +1,4 @@
-// SecurityConfig.java
+
 package com.ChatApp.backend.config;
 
 import com.ChatApp.backend.service.JwtService;

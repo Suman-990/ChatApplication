@@ -7,13 +7,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-// Update AuthService.java - Remove the manual encoder creation
+
 @Service
 @RequiredArgsConstructor
 public class AuthService {
     private final UserRepository userRepository;
     private final JwtService jwtService;
-    private final BCryptPasswordEncoder encoder; // Inject instead of creating new
+    private final BCryptPasswordEncoder encoder;
 
     public String signup(User user){
         user.setPassword(encoder.encode(user.getPassword()));

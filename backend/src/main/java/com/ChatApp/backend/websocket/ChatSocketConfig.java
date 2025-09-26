@@ -1,4 +1,4 @@
-// ChatSocketConfig.java - Add annotations
+
 package com.ChatApp.backend.websocket;
 
 import org.springframework.context.annotation.Configuration;

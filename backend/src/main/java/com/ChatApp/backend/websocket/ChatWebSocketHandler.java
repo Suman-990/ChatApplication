@@ -45,7 +45,7 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
             receiverSession.sendMessage(new TextMessage(message.getPayload()));
         }
 
-        // (optional) also send back to sender for confirmation
+
         session.sendMessage(new TextMessage(message.getPayload()));
     }
 
