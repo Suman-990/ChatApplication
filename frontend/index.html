@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login/Signup Page -->
+    <div id="authPage" class="auth-container">
+        <div class="auth-form">
+            <div class="auth-header">
+                <h1>ChatApp</h1>
+                <p>Login/signup to access</p>
+            </div>
+            
+            <div class="form-toggle">
+                <button id="loginTab" class="tab-btn active">Login</button>
+                <button id="signupTab" class="tab-btn">Sign Up</button>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form-content active">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            
+            <!-- Signup Form -->
+            <form id="signupForm" class="auth-form-content">
+                <div class="form-group">
+                    <label for="signupUsername">Username</label>
+                    <input type="text" id="signupUsername" placeholder="Choose a username" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            
+            <div class="auth-footer">
+                <p id="authMessage" class="auth-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Chat Application (hidden initially) -->
+    <div id="chatApp" class="chat-container" style="display: none;">
+        <!-- Header with user info and logout -->
+        <header class="chat-header">
+            <div class="header-content">
+                <h2>ChatApp</h2>
+                <div class="user-menu">
+                    <span id="currentUserName" class="username">User</span>
+                    <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main chat layout -->
+        <div class="chat-layout">
+            <!-- Left sidebar - Users list -->
+            <div class="users-sidebar">
+                <div class="sidebar-header">
+                    <h3>Online Users</h3>
+                    <div class="search-box">
+                        <input type="text" id="userSearch" placeholder="Search users...">
+                    </div>
+                </div>
+                <div id="usersList" class="users-list">
+                    <!-- Users will be dynamically added here -->
+                    <div class="loading">Loading users...</div>
+                </div>
+            </div>
+
+            <!-- Right side - Chat area -->
+            <div class="chat-area">
+                <div class="chat-window">
+                    <div class="chat-header-info">
+                        <div id="currentChatAvatar" class="chat-user-avatar">U</div>
+                        <div class="chat-user-details">
+                            <div id="currentChatName" class="chat-user-name">Select a user to start chatting</div>
+                            <div id="currentChatStatus" class="chat-user-status">Click on a user from the list</div>
+                        </div>
+                    </div>
+
+                    <div class="messages-container" id="messagesContainer">
+                        <div class="welcome-message">
+                            <p>Welcome to ChatApp! Select a user from the sidebar to start chatting.</p>
+                        </div>
+                    </div>
+
+                    <div class="message-input-container">
+                        <input type="text" class="message-input" id="messageInput" placeholder="Type a message..." disabled>
+                        <button class="send-button" id="sendButton" disabled>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 2L11 13" stroke="white" stroke-width="2"/>
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

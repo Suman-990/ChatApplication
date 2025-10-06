@@ -4,6 +4,7 @@ import com.ChatApp.backend.model.User;
 import com.ChatApp.backend.repository.UserRepository;
 import com.ChatApp.backend.service.JwtService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class AuthService {
+
     private final UserRepository userRepository;
     private final JwtService jwtService;
     private final BCryptPasswordEncoder encoder;
